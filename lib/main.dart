@@ -1,4 +1,6 @@
-import 'dart:ui';
+
+
+import 'package:daily_meal/category_meal_screen.dart';
 
 import './categories_screen.dart';
 import 'package:flutter/material.dart';
@@ -10,22 +12,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Daily Meal",
-      theme: ThemeData(primarySwatch: Colors.pink,accentColor: Colors.amber,
-      // textTheme: ThemeData.light().textTheme.copyWith(
-      //   bodyText1: TextStyle(
-      //     color: Color.fromRGBO(20,51,51,1),
-      //   ),
-      //   bodyText2: TextStyle(color: Color.fromRGBO(20,51,51,1),),
-      //   titleMedium: TextStyle(
-      //     fontSize: 24,
-      //     fontFamily: "RobotoCondensed",
-
-      //   )
-      //   )
-
-      ),
+      theme: ThemeData(primarySwatch: Colors.pink,accentColor: Colors.amber,fontFamily: 'RobotoCondensed',),
     
-      home: CategoriesScreen(),
+      //home: CategoriesScreen(),
+      //to open home page using route
+      initialRoute: '/',
+      //routes is another method to pass date or to navigate to other screen
+      routes: {
+        //route for home
+        '/':(context) => CategoriesScreen(),
+        //'/category-meal':(context) => CategoriesScreen(),
+        CategoryMealScreen.routeName:(context) => CategoryMealScreen(),
+      },
     );
   }
 }

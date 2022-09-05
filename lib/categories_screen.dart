@@ -1,6 +1,7 @@
+import 'package:daily_meal/18601786-dummy-data.dart';
 import 'package:flutter/material.dart';
 import './Models/category.dart';
-import './dummy-data.dart';
+
 import './categories_iteam.dart';
 
 
@@ -20,7 +21,7 @@ class CategoriesScreen extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         child: GridView(
           padding: EdgeInsets.all(10),
-        children: DUMMY_CATEGORIES.map((catData) => CategoriesIteam(title: catData.title, color: catData.color)).toList(),
+        children: DUMMY_CATEGORIES.map((catData) => CategoriesIteam(id: catData.id,title: catData.title, color: catData.color)).toList(),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 3/2,

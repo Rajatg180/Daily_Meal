@@ -1,4 +1,4 @@
-import 'package:daily_meal/18601786-dummy-data.dart';
+import 'package:daily_meal/dummy-data.dart';
 import 'package:flutter/material.dart';
 import './Models/category.dart';
 
@@ -7,12 +7,13 @@ import './categories_iteam.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
+  static const routeName='/Categories-screen';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
      
-      appBar: AppBar(title: Text("Daily Meal"),centerTitle: true),
+      appBar: AppBar(title: Text("Daily Meal",style: TextStyle(color: Colors.white),),centerTitle: true,),
 
       body: Container(
         

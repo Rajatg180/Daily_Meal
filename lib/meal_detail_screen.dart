@@ -8,7 +8,7 @@ class MealDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mealId=ModalRoute.of(context)!.settings.arguments as String;
-    //filter out data it fill return first occurance 
+    //filter out data it will return first occurance 
     final selectedMeal=DUMMY_MEALS.firstWhere((meal)=>meal.id==mealId);
     return Scaffold(
       appBar: AppBar(
@@ -24,7 +24,7 @@ class MealDetailScreen extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(15),
                 
-                height: MediaQuery.of(context).size.height-400,
+                height: MediaQuery.of(context).size.height-600,
                 width: double.infinity,
                 child: Image.network(selectedMeal.imageUrl,fit: BoxFit.cover,),
               ),

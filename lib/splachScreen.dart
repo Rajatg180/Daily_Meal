@@ -1,4 +1,5 @@
 import 'package:daily_meal/categories_screen.dart';
+import 'package:daily_meal/tabs_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -13,11 +14,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState(){
-    Future.delayed(Duration(seconds: 5),(() {
+    Future.delayed(Duration(seconds: 3),(() {
       // Navigator.of(context).pushReplacement(CategoriesScreen.routeName),
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_){
-          return CategoriesScreen();
+          return TabsScreen();
         }
         )
       );

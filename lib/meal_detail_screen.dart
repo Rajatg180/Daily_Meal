@@ -2,8 +2,11 @@ import 'package:daily_meal/dummy-data.dart';
 import 'package:flutter/material.dart';
 
 class MealDetailScreen extends StatelessWidget {
-  const MealDetailScreen({super.key});
+  
   static const routName='/meal-detail';
+  final Function toggleFavorites;
+  final Function isMealFavourite;
+  MealDetailScreen(this.toggleFavorites,this.isMealFavourite);
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +15,13 @@ class MealDetailScreen extends StatelessWidget {
     final selectedMeal=DUMMY_MEALS.firstWhere((meal)=>meal.id==mealId);
     return Scaffold(
       appBar: AppBar(
-        title: Text(selectedMeal.title,style: TextStyle(color: Colors.white),),
+        title: Text(selectedMeal.title,style: TextStyle(color: Colors.black),),
       ),
-      body: Container(
+      
         //margin: EdgeInsets.all(10),
         //color: Colors.amber,
 
-        child: SingleChildScrollView(
+        body: SingleChildScrollView(
           child: Column(
             children: [
               Container(
@@ -97,8 +100,13 @@ class MealDetailScreen extends StatelessWidget {
 
             ], 
           ),
+        
         ),
-      )
-    );
+        
+      floatingActionButton: FloatingActionButton(
+        child: Icon(isMealFavourite(mealId)? Icons.star : Icons.star_border),
+        onPressed: (() =>  toggleFavorites(mealId)),
+      
+    ));
   }
 }

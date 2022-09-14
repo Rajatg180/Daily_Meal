@@ -51,7 +51,8 @@ class CategoriesIteam extends StatelessWidget {
           style: TextStyle(
             //fontStyle: FontStyle.italic,
             fontFamily: 'RobotoCondensed',
-            fontSize: 20)),
+            fontWeight: FontWeight.bold,
+            fontSize: 25)),
         ),
         decoration: BoxDecoration(
           //for giving effect to container

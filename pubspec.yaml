@@ -72,6 +72,7 @@ flutter:
   assets:
     - assets/SplachScreen/meal.json
     - icon.png
+    - assets/empty.jpg
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,3 +1,4 @@
+import 'package:daily_meal/Models/meal.dart';
 import 'package:daily_meal/categories_screen.dart';
 import 'package:daily_meal/tabs_screen.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,9 @@ import 'package:lottie/lottie.dart';
 
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+ 
+  final List<Meal> favouriteMeals;
+  MyHomePage(this.favouriteMeals);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -18,7 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // Navigator.of(context).pushReplacement(CategoriesScreen.routeName),
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_){
-          return TabsScreen();
+          return TabsScreen(widget.favouriteMeals);
         }
         )
       );
